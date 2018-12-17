@@ -1,0 +1,5 @@
+<%= image_tag @profile.avatar.url(:thumb) %>
+<%= @profile.nickname %>
+<%= @profile.age %>
+<%= link_to "Edit", edit_profile_path %>
+<%= link_to "Delete", profile_path(@profile.id), method: :delete %>

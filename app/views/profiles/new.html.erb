@@ -1,0 +1,21 @@
+<h1>Profiles#new</h1>
+<p>Find me in app/views/profiles/new.html.erb</p>
+<%= form_for @profile, url: {action: "create"} do |f| %>
+
+<% if @profile.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@profile.errors.count, "error") %> </h2>
+ 
+    <ul>
+    <% @profile.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+nickname: <%= f.text_field :nickname %><br>
+age: <%= f.text_field :age %><br>
+avatar:  <%= f.file_field :avatar %><br>
+<%= f.submit %>
+<% end %>

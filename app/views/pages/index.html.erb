@@ -1,0 +1,10 @@
+<h1>Pages#index</h1>
+<p>Find me in app/views/pages/index.html.erb</p>
+<% if user_signed_in? %>
+	<%  if current_user.profile.nil?  %>
+		<%= link_to "Profile", new_profile_path %>
+	<%  else  %>
+		<%= link_to "Profile", profile_path(current_user.profile) %>
+	<%  end  %>
+
+<%  end  %>
